@@ -1,5 +1,5 @@
 package HTML::MagicTemplate          ;
-$VERSION = 3.13                      ;
+$VERSION = 3.14                      ;
 use strict                           ;
 use Text::MagicTemplate              ;
 push our @ISA, 'Text::MagicTemplate' ;
@@ -82,7 +82,7 @@ sub FillInForm # value handler
 
 HTML::MagicTemplate - HTML handlers for Text::MagicTemplate used in a HTML environment.
 
-=head1 VERSION 3.13
+=head1 VERSION 3.14
 
 =head1 SYNOPSIS
 
