@@ -1,5 +1,5 @@
 package HTML::MagicTemplate          ;
-$VERSION = 3.14                      ;
+$VERSION = 3.2                       ;
 use strict                           ;
 use Text::MagicTemplate              ;
 push our @ISA, 'Text::MagicTemplate' ;
@@ -10,7 +10,8 @@ sub DEFAULT_MARKERS        { $_[0]->HTML_MARKERS        }
 
 # all the following handlers and markers will be supplied
 # by Text::MagicTemplate so they go into that package
-package Text::MagicTemplate ;
+package
+    Text::MagicTemplate ;   # new line to trick the CPAN indexer
 
 # predeclaration of autoloaded methods
 # needed because AutoSplit does not append to autosplit.ix
@@ -82,7 +83,7 @@ sub FillInForm # value handler
 
 HTML::MagicTemplate - HTML handlers for Text::MagicTemplate used in a HTML environment.
 
-=head1 VERSION 3.14
+=head1 VERSION 3.2
 
 =head1 SYNOPSIS
 
