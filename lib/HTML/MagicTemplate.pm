@@ -1,5 +1,5 @@
 package HTML::MagicTemplate          ;
-$VERSION = 3.12                      ;
+$VERSION = 3.13                      ;
 use strict                           ;
 use Text::MagicTemplate              ;
 push our @ISA, 'Text::MagicTemplate' ;
@@ -24,13 +24,14 @@ __END__
 
 sub HTML_VALUE_HANDLERS # value handler
 {
-  [ SCALAR()     ,
-    REF()        ,
-    CODE()       ,
-    TableTiler() ,
-    ARRAY()      ,
-    HASH()       ,
-    FillInForm() ]
+  my ($s) = @_ ;
+  [ $s->SCALAR     ,
+    $s->REF        ,
+    $s->CODE       ,
+    $s->TableTiler ,
+    $s->ARRAY      ,
+    $s->HASH       ,
+    $s->FillInForm ]
 }
 
 sub TableTiler # value handler
@@ -81,7 +82,7 @@ sub FillInForm # value handler
 
 HTML::MagicTemplate - HTML handlers for Text::MagicTemplate used in a HTML environment.
 
-=head1 VERSION 3.12
+=head1 VERSION 3.13
 
 =head1 SYNOPSIS
 
