@@ -8,9 +8,9 @@ WriteMakefile
      ? ('AUTHOR'   => 'Domizio Demichelis <dd\@4pro.net>',
         'ABSTRACT' => 'HTML extensions for Text::MagicTemplate' )
      : (),
-  PREREQ_PM        => { Text::MagicTemplate => 3.0,
-                        HTML::TableTiler    => 1.0,
-                        HTML::FillInForm    => 1.0 },
+  PREREQ_PM        => { 'Text::MagicTemplate' => '3.12' ,
+                        'HTML::TableTiler'    => '1.0'  ,
+                        'HTML::FillInForm'    => '1.0'  } ,
 );
 
 

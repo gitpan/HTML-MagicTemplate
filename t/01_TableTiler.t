@@ -1,6 +1,7 @@
 use Test;
 use strict;
 use HTML::MagicTemplate;
+use Text::MagicTemplate;
 BEGIN {  plan tests => 2 }
 
 our $matrix = [[1..5],[6..10],[11..15]];
