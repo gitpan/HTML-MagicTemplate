@@ -1,5 +1,5 @@
 package HTML::MagicTemplate          ;
-our $VERSION = 3.04                  ;
+our $VERSION = 3.05                  ;
 use strict                           ;
 use Text::MagicTemplate              ;
 push our @ISA, 'Text::MagicTemplate' ;
@@ -44,8 +44,9 @@ sub TableTiler # value handler
       $z->value = eval
                   {
                     local $SIG{__DIE__};
+                    my $cont = $z->content ;
                     HTML::TableTiler::tile_table( $z->value,
-                                                  $z->{content} && \$z->{content},
+                                                  $cont && \$cont,
                                                   $z->attributes )
                   }     ;
       $z->value_process ;
@@ -66,7 +67,8 @@ sub FillInForm # value handler
       $z->value = eval
                   {
                     local $SIG{__DIE__};
-                    HTML::FillInForm->new->fill( scalarref => \$z->{content},
+                    my $cont = $z->content ;
+                    HTML::FillInForm->new->fill( scalarref => \$cont,
                                                  fobject   => $z->value )
                   }     ;
       $z->value_process ;
@@ -79,7 +81,7 @@ sub FillInForm # value handler
 
 HTML::MagicTemplate - HTML handlers for Text::MagicTemplate used in a HTML environment.
 
-=head1 VERSION 3.04
+=head1 VERSION 3.05
 
 =head1 SYNOPSIS
 
