@@ -1,5 +1,5 @@
 package HTML::MagicTemplate          ;
-our $VERSION = 3.05                  ;
+$VERSION = 3.1                       ;
 use strict                           ;
 use Text::MagicTemplate              ;
 push our @ISA, 'Text::MagicTemplate' ;
@@ -81,7 +81,7 @@ sub FillInForm # value handler
 
 HTML::MagicTemplate - HTML handlers for Text::MagicTemplate used in a HTML environment.
 
-=head1 VERSION 3.05
+=head1 VERSION 3.1
 
 =head1 SYNOPSIS
 
@@ -353,6 +353,9 @@ More information at http://perl.4pro.net/?HTML::MagicTemplate.
 =head1 AUTHOR
 
 Domizio Demichelis, <dd@4pro.net>.
+
+=for html
+<img src="http://perl.4pro.net/bug?HTML::MagicTemplate" height="1" width="1" border="0">
 
 =head1 COPYRIGHT
 
