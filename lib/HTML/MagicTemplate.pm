@@ -1,16 +1,16 @@
 package HTML::MagicTemplate          ;
-our $VERSION = 3.03                  ;
+our $VERSION = 3.04                  ;
 use strict                           ;
 use Text::MagicTemplate              ;
 push our @ISA, 'Text::MagicTemplate' ;
 
+# defaults overriding (method redefinition)
+sub DEFAULT_VALUE_HANDLERS { $_[0]->HTML_VALUE_HANDLERS }
+sub DEFAULT_MARKERS        { $_[0]->HTML_MARKERS        }
+
 # all the following handlers and markers will be supplied
 # by Text::MagicTemplate so they go into that package
 package Text::MagicTemplate ;
-
-# defaults overriding (method redefinition)
-sub DEFAULT_VALUE_HANDLERS { goto &HTML_VALUE_HANDLERS }
-sub DEFAULT_MARKERS        { goto &HTML_MARKERS        }
 
 # predeclaration of autoloaded methods
 # needed because AutoSplit does not append to autosplit.ix
@@ -79,7 +79,7 @@ sub FillInForm # value handler
 
 HTML::MagicTemplate - HTML handlers for Text::MagicTemplate used in a HTML environment.
 
-=head1 VERSION 3.03
+=head1 VERSION 3.04
 
 =head1 SYNOPSIS
 
